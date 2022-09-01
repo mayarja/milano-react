@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/milano/static/css/main.31d6cfe0.css",
-    "main.js": "/milano/static/js/main.1bc446b0.js",
-    "index.html": "/milano/index.html",
-    "main.1bc446b0.js.map": "/milano/static/js/main.1bc446b0.js.map"
+    "main.css": "/milano-react/static/css/main.31d6cfe0.css",
+    "main.js": "/milano-react/static/js/main.1bc446b0.js",
+    "index.html": "/milano-react/index.html",
+    "main.1bc446b0.js.map": "/milano-react/static/js/main.1bc446b0.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
