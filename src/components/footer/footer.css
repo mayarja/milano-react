@@ -1,0 +1,120 @@
+.footer{
+    padding-top: 20px;
+}
+
+.fot-s{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.fot-s h2{
+    font-size: 35px;
+    color: #a68f64;
+    font-weight: bold;
+}
+.fot-s h2 span{
+    color: #a80707 !important;
+}
+
+.fot-s p{
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fot-s a{
+    text-decoration: none;
+    color: #a80707;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.fot-s .icon{
+    color: #a68f64;
+    margin-right: 5px;
+}
+
+.fot-c{
+    margin-bottom: 20px;
+}
+
+
+.fot-c h3{
+    color :#a80707;
+    margin-bottom: 20px;
+}
+.fot-c  ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.fot-c  ul li{
+    width: 50%;
+    margin-bottom: 5px;
+    color: #555;
+    
+}
+.fot-c  ul li a{
+    text-decoration: none;
+    color: #666;
+    position: relative;
+    font-size: 14px;
+}
+
+.fot-c  ul li a::after{
+    background-color: #a80707;
+    position: absolute;
+    content: '';
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 0.3s ease-in ;
+}
+
+
+.fot-c  ul li a:hover::after{
+width: 100%;
+}
+
+
+.fot-e h3{
+    color :#a80707;
+    margin-bottom: 20px;
+}
+
+.fot-e .title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    color: #555;
+    font-size: 15px;
+}
+
+.copyright{
+    border-top: 2px solid #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 4px;
+}
+
+.copyright p{
+    color: #555;
+    font-size: 15px;
+}
+
+.copyright .icon-media{
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}

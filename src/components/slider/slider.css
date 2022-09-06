@@ -1,0 +1,57 @@
+.slider{
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height:  100%;
+}
+
+.slid-one{
+    width: 100vw !important;
+    height: 93vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    transform: translateX(0vw);
+    transition: all 0.8s ease-in-out;
+}
+.fuck{
+    width: 100vw;
+}
+
+.slider .silde-title{
+    width: fit-content;
+    padding: 15px 30px;
+    border-radius: 8px;
+   background-color: #e3e8e370;
+   margin-bottom: 50px;
+}
+
+.slider .silde-title h2{
+    color: #a80707;
+    font-size: 40px;
+}
+.slider .silde-title p{
+    color: #eee;
+    font-size:20px ;
+}
+
+
+.slider-icon{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+    
+}
+
+.slider-icon .icon-s{
+    cursor: pointer;
+    background-color: rgba(238, 238, 238, 0.384);
+    border-radius: 50%;
+}

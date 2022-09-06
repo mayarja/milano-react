@@ -1,0 +1,433 @@
+/*start about page*/
+.header{
+    width: 100%;
+    height:93vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../assets/image/kit/kit-13.jpg') center;
+    background-size: cover;
+}
+/*end about page*/
+
+/*start faq page*/
+.search{
+    background-color: #eee;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.search h1{
+    font-size: 70px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+.search .inp{
+    width: 50%;
+    margin-top: 20px;
+
+}
+.search .inp input{
+    border: none;
+}
+.search .inp input:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.title-two{
+    padding-bottom: 30px;
+}
+
+.title-two h1{
+    font-size: 55px;
+    color: #222;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(193, 193, 193);
+}
+.title-two p{
+    color: #555;
+    font-size: 22px;
+    margin-bottom: 40px;
+    font-weight: 300;
+
+}
+.accordion-button:not(.collapsed) {
+    color: #eee;
+    background-color: #a80707;
+    box-shadow: inset 0 -1px 0 rgb(212 21 21 / 13%);
+}
+.accord{
+    border-bottom: 1px solid #000;
+}
+/*end faq page*/
+
+/*start login*/
+.login{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=600') center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+}
+.login .box-login{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px ;
+    border-radius: 8px;
+}
+@media screen and (max-width : 550px) {
+    .login .box-login{
+        max-width: 370px;
+    }
+}
+
+.login .box-login .inp{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.login .box-login .inp > a{
+    margin-top: 5px;
+    color: teal;
+}
+
+.login .box-login .inp input{
+    width: 100%;
+    margin: 20px 8px 0 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+.login .box-login .inp input:focus{
+    outline: none;
+}
+
+.login .box-login p{
+    font-size: 16px;
+    margin: 20px 0;
+}
+ .btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.login .box-login .btn{
+    padding: 10px 20px;
+    width: 30%;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.log{
+    background-color: tomato !important;
+    color: #fff;
+}
+.reg{
+    background-color: teal !important;
+    color: #fff;
+}
+/*end login*/
+
+/*start register*/
+.register{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=600') center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+}
+.register .box-register{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px ;
+    border-radius: 8px;
+}
+@media screen and (max-width : 550px) {
+    .register .box-register{
+        max-width: 370px;
+    }
+}
+
+.register .box-register .inp{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register .box-register .inp input{
+    width: 48%;
+    margin: 20px 8px 0 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+.register .box-register .inp input:focus{
+    outline: none;
+}
+
+.register .box-register p{
+    font-size: 16px;
+    margin: 20px 0;
+}
+ .btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.register .box-register .btn{
+    padding: 10px 20px;
+    width: 30%;
+    border: none;
+    background-color: teal;
+    color: #fff;
+    text-decoration: none;
+}
+
+.link3{
+    text-decoration: none;
+    color: #fff;
+}
+
+.link3:hover{
+    color: #fff;
+}
+/*end register*/
+
+/*start kitch*/
+.box-kitch{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.img-box{
+    width: 100%;
+    height: 100%;
+}
+
+.img-box img{
+    width: 100%;
+    height: 93vh;
+}
+
+.box-kitch .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.box-kitch .title h1{
+    font-weight: 200;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.box-kitch .title p{
+    font-size: 18px;
+    color: #444;
+    width: 80%;
+}
+.box-kitch .title .money{
+    font-size: 50px;
+    font-weight: 100;
+}
+.box-kitch .size-color {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 20px 0;
+} 
+.box-kitch .size-color .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-kitch .size-color .color span,
+.box-kitch .size-color .size span{
+    font-size: 28px;
+    color: #555;
+}
+.box-kitch .size-color .color .div-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.box-kitch .size-color  .size{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-kitch .size-color  .size select{
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.box-kitch .btn-add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 20px 0
+}
+.box-kitch .btn-add .add {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.box-kitch .btn-add .add button{
+    border: none;
+    background-color: #fff;
+}
+.box-kitch .btn-add .add .ss{
+    border: 1px solid teal;
+    padding: 15px;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-kitch .btn-add .btn{
+    border: 2px solid teal;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/*end kitch*/
+
+/*start cart*/
+.cart h1{
+    margin-top: 30px;
+    font-weight: 300;
+}
+.cart-title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.cart-title .spans{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap : 15px
+}
+.cart-title .spans span{
+    text-decoration: underline;
+    font-size: 22px;
+}
+.cart .item-cart{
+    display: flex; 
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    position: relative;
+}
+
+.cart .item-cart .close{
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    color: red;
+    cursor: pointer;
+}
+.cart .item-cart .img-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.cart .item-cart .img-title .cart-img{
+    width: 300px;
+    height: 300px;
+}
+.cart .item-cart .img-title .cart-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.cart .item-cart .img-title .title{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.title .color-ball{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.cart .size-cart{
+    display: flex;
+    flex-direction: column;
+}
+.cart .size-cart .spans-cart{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 29px;
+}
+.cart .size-cart .spans-cart button{
+    border: none;
+    background: none !important;
+}
+.cart .size-cart .price{
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.cart .box-order{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid lightgray;
+}
+
+.cart .box-order h2{
+    font-weight: 200;
+}
+
+.cart .box-order .order-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.cart .box-order .order-title span{
+    font-size: 20px;
+    font-weight: 300;
+}
+/*end cart*/
