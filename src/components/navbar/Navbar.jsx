@@ -1,16 +1,19 @@
 import "./navbar.css";
 import { AiFillFacebook, AiOutlineBars } from "react-icons/ai";
 import { FaInstagramSquare, FaPinterestSquare } from "react-icons/fa";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 function Navbar({ user, getchar }) {
   let [showicon, setShowIcon] = useState(false);
 
+  let { quantity } = useSelector((state) => state.cart);
+
   let handclik = () => {
     setShowIcon(!showicon);
   };
-  console.log(user);
   return (
     <div className="nav">
       <div className="container">
@@ -38,7 +41,13 @@ function Navbar({ user, getchar }) {
             </span>
           </div>
           {user ? (
-            <span className="profile">{getchar}</span>
+            <div className="nav-e">
+              <span className="profile">{getchar}</span>
+              <Link to="/milano-react/cart" className="cart-icon">
+                <AiOutlineShoppingCart size={30} />
+                {quantity > 0 && <span>{quantity}</span>}
+              </Link>
+            </div>
           ) : (
             <div className="nav-e">
               <span>
@@ -76,16 +85,25 @@ function Navbar({ user, getchar }) {
                 Faq
               </Link>
             </li>
-            <li>
-              <Link className="link" to="/milano-react/login">
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link className="link" to="/milano-react/register">
-                Register
-              </Link>
-            </li>
+            {user ? (
+              <div className="sull-cart d-flex gap-2 ">
+                <span className="profile">{getchar}</span>
+                <AiOutlineShoppingCart className="cart" size={30} />
+              </div>
+            ) : (
+              <Fragment>
+                <li>
+                  <Link className="link" to="/milano-react/login">
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link" to="/milano-react/register">
+                    Register
+                  </Link>
+                </li>
+              </Fragment>
+            )}
           </ul>
         </div>
       </div>

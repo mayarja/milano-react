@@ -2,18 +2,28 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Login({ fncheck, setGetchar }) {
-  let [email, setEmail] = useState("");
-  let [password1, setpassword1] = useState("");
+  // let [email, setEmail] = useState("");
+  // let [password1, setpassword1] = useState("");
+  // let [firstchar, setfirstchar] = useState("");
+
+  let [inp, setInp] = useState({
+    email: "",
+    password: "",
+  });
+
+  let allinput = (e, name) => {
+    setInp((prev) => {
+      return { ...prev, [name]: e.target.value };
+    });
+  };
+  console.log(inp);
 
   let navigate = useNavigate();
-  let x;
   let gotohome = () => {
-    if (email !== "" && password1 !== "") {
+    if (inp.email !== "" && inp.password !== "") {
       fncheck();
+      setGetchar(inp.email.charAt(0).toUpperCase());
       navigate("/milano-react");
-      x = email.charAt(0).toUpperCase();
-      console.log(x);
-      setGetchar(x);
     }
   };
   return (
@@ -24,18 +34,16 @@ function Login({ fncheck, setGetchar }) {
           <input
             type="email"
             placeholder="email"
-            value={email}
             onChange={(e) => {
-              setEmail(e.target.value);
+              allinput(e, "email");
             }}
             required
           />
           <input
             type="password"
             placeholder="password"
-            value={password1}
             onChange={(e) => {
-              setpassword1(e.target.value);
+              allinput(e, "password");
             }}
             required
           />

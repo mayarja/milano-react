@@ -128,4 +128,35 @@
     background-color: teal;
     border-radius: 50%;
     cursor: pointer;
+    padding-top: 5px;
+    font-size: 17px;
+}
+
+.cart-icon{
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+.cart-icon span{
+    position: absolute;
+    top: -7px;
+    right: -15px;
+    background-color: #a80707;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    font-size: 15px;
+    padding-top: 3px;
+    align-items: center;
+}
+.cart-icon:hover{
+    color: #fff;
+}
+.cart-icon:hover  span{
+    color: #a80707;
+    background-color: #fff;
 }

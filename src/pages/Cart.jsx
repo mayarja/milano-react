@@ -1,45 +1,33 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import Navbar from "../components/navbar/Navbar";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useLocalStorage from "use-local-storage";
 import { TiDelete } from "react-icons/ti";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { deletepruduct } from "../store/cartslice.js";
+import { useEffect } from "react";
 function Cart({ user, getchar }) {
   let [number, setNumber] = useState(1);
+  let dispatch = useDispatch();
+  let { products, total } = useSelector((state) => state.cart);
+  let [data, setData] = useLocalStorage("data", null);
 
-  let handclick = (e) => {
-    if (e === "p") {
-      setNumber(number + 1);
-    } else {
-      setNumber(number - 1);
-    }
+  let deleteitem = ({ id, price, number }) => {
+    dispatch(deletepruduct({ id, price, number }));
+    // setreren(reren + 1);
   };
 
-  let location = useLocation();
-
-  let [color, setColor] = useState(location.state.color);
-  let [img, setImg] = useState(location.state.img);
-  let [money, setMoney] = useState(location.state.money);
-  let [id, setId] = useState(location.state.id);
-
-  let [newdata, setnewData] = useState({ color, img, money, id });
-  let [xx, setxx] = useState(0);
-
-  let [data, setData] = useLocalStorage("data", []);
+  useEffect(() => {
+    setData(products);
+  }, [products, setData]);
 
   useEffect(() => {
-    setxx(xx + 1);
+    if (products.length > 0) {
+      console.log("first");
+      setData(products);
+    }
   }, []);
-
-  useEffect(() => {
-    if (xx >= 1) {
-      setData((prev) => [...prev, newdata]);
-    }
-  }, [xx, setData, newdata]);
-
-  let deletefn = (index) => {
-    let filter = data.filter((e) => e.id !== index);
-    setData(filter);
-  };
 
   return (
     <div className="cart">
@@ -60,7 +48,7 @@ function Cart({ user, getchar }) {
       <div className=" container-fluid">
         <div className="row">
           <div className="col-lg-9">
-            {data &&
+            {data.length > 0 ? (
               data.map((e, index) => (
                 <Fragment key={index}>
                   <div className="item-cart">
@@ -80,7 +68,7 @@ function Cart({ user, getchar }) {
                           className="color-ball"
                         ></p>
                         <p>
-                          <b>Size</b>: Big
+                          <b>Size</b>: {e.size}
                         </p>
                       </div>
                     </div>
@@ -89,34 +77,39 @@ function Cart({ user, getchar }) {
                         className="close"
                         size={30}
                         onClick={() => {
-                          deletefn(e.id);
+                          deleteitem(e);
                         }}
                       />
                       <div className="spans-cart">
                         <button
                           onClick={() => {
-                            handclick("p");
+                            setNumber(number + 1);
                           }}
                           disabled={number === 5}
                         >
                           +
                         </button>
-                        <span>{number}</span>
+                        <span>{e.number}</span>
                         <button
                           onClick={() => {
-                            handclick("n");
+                            setNumber(number - 1);
                           }}
                           disabled={number === 1}
                         >
                           -
                         </button>
                       </div>
-                      <span className="price">{`${e.money * number}$`}</span>
+                      <span className="price">{`${e.price * e.number}`}</span>
                     </div>
                   </div>
                   <hr />
                 </Fragment>
-              ))}
+              ))
+            ) : (
+              <div className="text-center fs-2 mt-5 nodata">
+                "You haven't chosen any item yet"
+              </div>
+            )}
           </div>
 
           <div className="col-lg-3">
@@ -124,7 +117,7 @@ function Cart({ user, getchar }) {
               <h2>ORDER SUMMARY</h2>
               <div className="order-title">
                 <span>Subatial</span>
-                <span>$ 80</span>
+                <span>$ {total}</span>
               </div>
               <div className="order-title">
                 <span>Estimated Shipping</span>
@@ -138,7 +131,7 @@ function Cart({ user, getchar }) {
                 <span>
                   <b>Total</b>
                 </span>
-                <span>$ 80</span>
+                <span>$ {total}</span>
               </div>
               <button className="btn btn-dark">CHEACKOUT NOW</button>
             </div>

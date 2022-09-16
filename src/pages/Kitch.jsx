@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../components/footer/Footer";
+import { useDispatch } from "react-redux";
+import { addpruduct } from "../store/cartslice";
 
 function Kitch({ user, getchar }) {
   let [number, setNumber] = useState(1);
 
   let location = useLocation();
   let [img, setImg] = useState(location.state.img);
-  let [money, setMoney] = useState(location.state.price);
   let [id, setId] = useState(location.state.id);
+  let [price, setPrice] = useState(location.state.price);
+  let [product, setproduct] = useState({ id, img, price });
+  let [color, setColor] = useState("black");
+  let [size, setSize] = useState("Small");
 
   let handclick = (e) => {
     if (e === "p") {
@@ -19,16 +24,14 @@ function Kitch({ user, getchar }) {
     }
   };
 
-  let navigate = useNavigate();
-
-  let [color, setColor] = useState("black");
-
   let getcolor = (e) => {
     setColor(e);
   };
 
-  let gotocartfn = (img, money) => {
-    navigate("/milano-react/cart", { state: { img, money, color, id } });
+  let dispatch = useDispatch();
+
+  let addtocartfn = () => {
+    dispatch(addpruduct({ ...product, price, color, number, size }));
   };
 
   return (
@@ -51,7 +54,7 @@ function Kitch({ user, getchar }) {
                 eget tristique tortor pretium ut. Curabitur elit justo,
                 consequat id condimentum ac, volutpat ornare.
               </p>
-              <span className="money">{`${money * number}$ `}</span>
+              <span className="money">{`${price * number}$ `}</span>
 
               <div className="size-color">
                 <div className="color">
@@ -80,10 +83,15 @@ function Kitch({ user, getchar }) {
                 </div>
                 <div className="size">
                   <span>Size</span>
-                  <select>
-                    <option>Small</option>
-                    <option>Meduim</option>
-                    <option>Big</option>
+                  <select
+                    value="Small"
+                    onChange={(e) => {
+                      setSize(e.target.value);
+                    }}
+                  >
+                    <option value="Small">Small</option>
+                    <option value="Meduim">Meduim</option>
+                    <option value="Big">Big</option>
                   </select>
                 </div>
               </div>
@@ -94,7 +102,7 @@ function Kitch({ user, getchar }) {
                     onClick={() => {
                       handclick("p");
                     }}
-                    disabled={number === 5}
+                    disabled={number === 3}
                   >
                     +
                   </button>
@@ -111,7 +119,7 @@ function Kitch({ user, getchar }) {
                 <button
                   className="btn"
                   onClick={() => {
-                    gotocartfn(img, money);
+                    addtocartfn();
                   }}
                 >
                   Add To Cart

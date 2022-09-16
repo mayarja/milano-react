@@ -69,7 +69,7 @@
 .catego .box-cate::after{
     content: '';
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.881);
+    background-color:rgba(35, 23, 24, 0.813);
     bottom: 0;
     height: 0%;
     width: 100%;
@@ -82,7 +82,7 @@
 
 .box-cate .overlay{
     position: absolute;
-    top: -7px !important;
+    top: -20px !important ;
     display: flex;
     justify-content: space-around;
     height: 100%;
@@ -95,8 +95,9 @@
     transition: all ease-in 0.3s;
 }
 .catego .box-cate:hover .overlay{
+    transition: all ease-in 0.3s;
     opacity: 1;
-    top: 3%;
+    top: 0 !important;
 }
 .box-cate .overlay h2{
     color: #a80707;

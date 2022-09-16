@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   let [user, setUser] = useLocalStorage("check", false);
-  let [getchar, setGetchar] = useState("");
+  let [getchar, setGetchar] = useLocalStorage("char", "");
 
   let fncheck = () => {
     setUser(true);
