@@ -11,7 +11,7 @@ function Cart({ user, getchar }) {
   let [number, setNumber] = useState(1);
   let dispatch = useDispatch();
   let { products, total } = useSelector((state) => state.cart);
-  let [data, setData] = useLocalStorage("data", null);
+  let [data, setData] = useLocalStorage("data", []);
 
   let deleteitem = ({ id, price, number }) => {
     dispatch(deletepruduct({ id, price, number }));
