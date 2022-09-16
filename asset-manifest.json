@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/milano-react/static/css/main.15d82654.css",
-    "main.js": "/milano-react/static/js/main.a1e03dbe.js",
+    "main.js": "/milano-react/static/js/main.f2e5e4e8.js",
     "static/media/kit-1.jpg": "/milano-react/static/media/kit-1.cf6ff56231896d01afee.jpg",
     "static/media/kit-2.jpg": "/milano-react/static/media/kit-2.ea410b8d8265c924613a.jpg",
     "static/media/kit-3.jpg": "/milano-react/static/media/kit-3.24d53f61b77ba24cf42e.jpg",
@@ -51,10 +51,10 @@
     "static/media/slick.woff": "/milano-react/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/milano-react/index.html",
     "main.15d82654.css.map": "/milano-react/static/css/main.15d82654.css.map",
-    "main.a1e03dbe.js.map": "/milano-react/static/js/main.a1e03dbe.js.map"
+    "main.f2e5e4e8.js.map": "/milano-react/static/js/main.f2e5e4e8.js.map"
   },
   "entrypoints": [
     "static/css/main.15d82654.css",
-    "static/js/main.a1e03dbe.js"
+    "static/js/main.f2e5e4e8.js"
   ]
 }
